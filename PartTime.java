@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package employee;
+
+import java.util.Scanner;
 
 /**
  *
  * @author manhq
  */
-public class PartTime extends Employee{
+public class PartTime extends Employee {
+
     private int timeWork;
 
     public PartTime() {
@@ -30,23 +32,23 @@ public class PartTime extends Employee{
 
     @Override
     public void input() {
-        super.input(); 
+        super.input();
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập lương cơ bản theo giờ: ");
         basicsalary = scanner.nextInt();
         System.out.print("Nhập số giờ làm:");
-        timeWork=scanner.nextInt();
+        timeWork = scanner.nextInt();
     }
 
     @Override
     public int caculateSalary() {
-        this.salary=this.basicsalary*this.timeWork;
+        this.salary = this.basicsalary * this.timeWork;
         return this.salary;
     }
 
     @Override
     public String toString() {
-        return super.toString()+ "\n, Số giờ làm: "+this.timeWork+", Tiền lương: "+this.salary; //To change body of generated methods, choose Tools | Templates.
+        return super.toString() + "\n, Số giờ làm: " + this.timeWork + ", Tiền lương: " + this.salary; //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }

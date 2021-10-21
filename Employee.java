@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package employee;
 
 /**
@@ -11,13 +10,13 @@ package employee;
  * @author manhq
  */
 import java.util.Scanner;
- 
+
 public class Employee {
+
     private String id, name, phone, mail, department;
     private int age;
     protected int salary, basicsalary;
-    Scanner scanner = new Scanner(System.in);
-     
+
     public Employee() {
     }
 
@@ -29,7 +28,7 @@ public class Employee {
         this.age = age;
         this.salary = salary;
         this.basicsalary = basicsalary;
-        this.department=department;
+        this.department = department;
     }
 
     public void setId(String id) {
@@ -63,8 +62,7 @@ public class Employee {
     public void setDepartment(String department) {
         this.department = department;
     }
-    
-    
+
     public String getId() {
         return id;
     }
@@ -97,13 +95,8 @@ public class Employee {
         return department;
     }
 
-
- 
-    
-     
     public void input() {
-        System.out.print("Nhập mã nhân viên: ");
-        id = scanner.nextLine();
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập họ tên nhân viên: ");
         name = scanner.nextLine();
         System.out.print("Nhập số điện thoại: ");
@@ -113,19 +106,18 @@ public class Employee {
         System.out.print("Nhập tuổi: ");
         age = scanner.nextInt();
         System.out.print("Nhập phòng ban: ");
-        department=scanner.nextLine();
+        department = scanner.nextLine();
         scanner.nextLine();
     }
-     
-    public int caculateSalary(){
+
+    public int caculateSalary() {
         return this.salary;
     }
-    
-    
+
     @Override
     public String toString() {
-        return "Mã nhân viên: " + this.id + ", họ tên nhân viên: " + this.name + 
-            ", số điện thoại: " + this.phone + ", mail: " + this.mail + 
-            ", tuổi: " + this.age + ", lương cơ bản: " + this.basicsalary;
+        return "Mã nhân viên: " + this.id + ", họ tên nhân viên: " + this.name
+                + ", số điện thoại: " + this.phone + ", mail: " + this.mail
+                + ", tuổi: " + this.age + ", lương cơ bản: " + this.basicsalary;
     }
 }
