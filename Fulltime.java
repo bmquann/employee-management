@@ -42,8 +42,8 @@ public class Fulltime extends Employee {
 
     @Override
     public int caculateSalary() {
-        salary = (this.basicsalary * dayWork) / 28;
-        return salary;
+        salary = (this.basicsalary / 28) * dayWork;
+        return salary ;
 
     }
 

@@ -18,8 +18,6 @@ public class Management implements IServices, IAction {
 
     private List<Employee> empList;
 
-    int n;
-
     public Management() {
         this.empList = new ArrayList<>();
     }
@@ -75,10 +73,17 @@ public class Management implements IServices, IAction {
 
     @Override
     public void edit(String id, Employee emp, List<Employee> empList) {
-        search(id, empList).forEach(employee -> {
-            empList.set((empList.indexOf(employee)), emp);
-            emp.setId(id);
-        });
+//        search(id, empList).forEach(employee -> {
+//            empList.set((empList.indexOf(employee)), emp);
+//            emp.setId(id);
+//        });
+        for (int i = 0; i < empList.size(); i++) {
+
+            if (empList.get(i).getId().equals(id)) {
+                empList.set((i), emp);
+                empList.get(i).setId(id);
+            }
+        }
     }
 
     @Override
