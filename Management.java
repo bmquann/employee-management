@@ -73,10 +73,6 @@ public class Management implements IServices, IAction {
 
     @Override
     public void edit(String id, Employee emp, List<Employee> empList) {
-//        search(id, empList).forEach(employee -> {
-//            empList.set((empList.indexOf(employee)), emp);
-//            emp.setId(id);
-//        });
         for (int i = 0; i < empList.size(); i++) {
 
             if (empList.get(i).getId().equals(id)) {
@@ -87,13 +83,17 @@ public class Management implements IServices, IAction {
     }
 
     @Override
-    public List<Employee> search(String name, List<Employee> empList) {
-        return empList.stream().filter(o -> o.getName().equals(name)).collect(Collectors.toList());
+    public void search(String name, List<Employee> empList) {
+        for (Employee employee : empList) {
+            if(employee.getName().equals(name)){
+                System.out.println(employee.toString());
+                
+            }          
+        }
     }
 
     @Override
     public void Display(List<Employee> empList) {
-        // this.empList.forEach((emp) -> System.out.println(emp.toString()));
         for (Employee employee : empList) {
             System.out.println(employee.toString());
         }

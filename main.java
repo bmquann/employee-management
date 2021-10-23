@@ -39,9 +39,7 @@ public class main {
                 case "2": {
                     System.out.print("Enter name to search: ");
                     String name = scanner.nextLine();
-                    manager.search(name, empList).forEach(employee -> {
-                        System.out.println(employee.toString());
-                    });
+                    manager.search(name, empList);
                     break;
                 }
                 case "3": {

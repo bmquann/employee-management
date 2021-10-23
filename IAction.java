@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface IAction {
 
-    public List<Employee> search(String name, List<Employee> empList);
+    public void search(String name, List<Employee> empList);
 
     public void Display(List<Employee> empList);
 }
